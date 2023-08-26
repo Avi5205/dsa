@@ -42,29 +42,50 @@ public class Main {
 //        System.out.println("\nLinked List after set():");
 //        myLinkedList1.printList();
 
-        System.out.println("======================================");
+//        System.out.println("======================================");
+//
+//        LinkedList myLinkedList3 = new LinkedList(1);
+//        myLinkedList3.append(3);
+//
+//        System.out.println("LL before insert():");
+//        myLinkedList3.printList();
+//
+//        myLinkedList3.insert(1, 2);
+//
+//        System.out.println("\nLL after insert(2) in middle:");
+//        myLinkedList3.printList();
+//
+//        myLinkedList3.insert(0, 0);
+//
+//        System.out.println("\nLL after insert(0) at beginning:");
+//        myLinkedList3.printList();
+//
+//        myLinkedList3.insert(4, 4);
+//
+//        System.out.println("\nLL after insert(4) at end:");
+//        myLinkedList3.printList();
 
-        LinkedList myLinkedList3 = new LinkedList(1);
-        myLinkedList3.append(3);
 
-        System.out.println("LL before insert():");
-        myLinkedList3.printList();
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
 
-        myLinkedList3.insert(1, 2);
+        System.out.println("\nLinked List:");
+        myLinkedList.printList();
 
-        System.out.println("\nLL after insert(2) in middle:");
-        myLinkedList3.printList();
+        System.out.println("Middle Node:");
+        System.out.println( myLinkedList.findMiddleNode().value);
 
-        myLinkedList3.insert(0, 0);
 
-        System.out.println("\nLL after insert(0) at beginning:");
-        myLinkedList3.printList();
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Middle Node:
+            3
 
-        myLinkedList3.insert(4, 4);
-
-        System.out.println("\nLL after insert(4) at end:");
-        myLinkedList3.printList();
-
+        */
 
 
 
