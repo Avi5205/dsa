@@ -65,28 +65,94 @@ public class Main {
 //        System.out.println("\nLL after insert(4) at end:");
 //        myLinkedList3.printList();
 
+//
+//        LinkedList myLinkedList = new LinkedList(1);
+//        myLinkedList.append(2);
+//        myLinkedList.append(3);
+//        myLinkedList.append(4);
+//        myLinkedList.append(5);
+//
+//        System.out.println("\nLinked List:");
+//        myLinkedList.printList();
+//
+//        System.out.println("Middle Node:");
+//        System.out.println( myLinkedList.findMiddleNode().value);
+//
+//
+//        /*
+//            EXPECTED OUTPUT:
+//            ----------------
+//            Middle Node:
+//            3
+//
+//        */
+//
+//        // create a loop by connecting the tail to the second node
+//       // myLinkedList.getTail().next = myLinkedList.getHead().next;
+//
+//
+//        System.out.println("Has Loop:");
+//        System.out.println( myLinkedList.hasLoop());
+//
+//
+//        /*
+//            EXPECTED OUTPUT:
+//            ----------------
+//            Has Loop:
+//            true
+//
+//        */
+//
+//        int k = 2;
+//        int result = myLinkedList.findKthFromEnd(k).value;
+//
+//        System.out.println(result); // Output: 4
+//
+//        /*
+//            EXPECTED OUTPUT:
+//            ----------------
+//            4
+//
+//        */
 
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(2);
-        myLinkedList.append(3);
-        myLinkedList.append(4);
-        myLinkedList.append(5);
+        LinkedList ll = new LinkedList(3);
+        ll.append(5);
+        ll.append(8);
+        ll.append(10);
+        ll.append(2);
+        ll.append(1);
 
-        System.out.println("\nLinked List:");
-        myLinkedList.printList();
+        // Print the list before partitioning
+        System.out.println("LL before partitionList:");
+        ll.printList(); // Output: 3 5 8 10 2 1
 
-        System.out.println("Middle Node:");
-        System.out.println( myLinkedList.findMiddleNode().value);
+        // Call the partitionList method with x = 5
+        ll.partitionList(5);
 
+        // Print the list after partitioning
+        System.out.println("\nLL after partitionList:");
+        ll.printList(); // Output: 3 2 1 5 8 10
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            Middle Node:
+            LL before partition_list:
             3
+            5
+            8
+            10
+            2
+            1
+
+            LL after partition_list:
+            3
+            2
+            1
+            5
+            8
+            10
 
         */
-
 
 
     }
