@@ -365,6 +365,69 @@ public class LinkedList {
         }
     }
 
+    public void reverseBetween(int m, int n) {
+        // Check: If there are no nodes in our linked list,
+        // there's nothing to reverse, so exit the method.
+        if (head == null) return;
+
+        // Create a new 'dummy' node that precedes the head of
+        // our list. This helps simplify edge cases.
+        Node dummy = new Node(0);
+        dummy.next = head;
+
+        // The 'prev' pointer is used to navigate to the node
+        // that sits right before our sublist begins.
+        Node prev = dummy;
+
+        // Move the 'prev' pointer so that it points to the node
+        // just before our sublist. This sets up our reversal.
+        for (int i = 0; i < m; i++) {
+            prev = prev.next;
+        }
+
+        // 'current' will point to the first node of the sublist
+        // we wish to reverse. It essentially marks the beginning.
+        Node current = prev.next;
+
+        // This loop is responsible for actually reversing the
+        // specific section (from m to n) of our linked list.
+        for (int i = 0; i < n - m; i++) {
+
+            // 'temp' takes the reference of the next node in the
+            // sublist after 'current'. It is essentially the node
+            // that we're going to move to the start of the sublist.
+            Node temp = current.next;
+
+            // This line detaches 'temp' from its immediate
+            // position, by making 'current' point to the node after
+            // 'temp'. Think of this as temporarily "removing" the
+            // 'temp' node from the chain.
+            current.next = temp.next;
+
+            // Now, we want to attach 'temp' at the beginning of the
+            // sublist. To do so, we first make 'temp' point to
+            // whatever 'prev' was pointing at (which is the
+            // current start of the sublist).
+            temp.next = prev.next;
+
+            // Finally, we adjust 'prev's pointer to point to 'temp',
+            // effectively moving 'temp' to the start of our sublist.
+            // Now, the start of our sublist is changed to 'temp'.
+            prev.next = temp;
+
+            // Notice, with each iteration of the loop, we're taking
+            // the next node and moving it to the front of our sublist,
+            // hence reversing the order.
+        }
+
+        // After reversing, if 'm' was 0, meaning the head of the
+        // original list was part of the sublist we reversed,
+        // 'head' will no longer be the actual starting node.
+        // So, we adjust 'head' to point to the starting node
+        // after the reversal operation.
+        head = dummy.next;
+    }
+
     //    Node class
     class Node {
         int value;
